@@ -1,0 +1,21 @@
+@import "_variables.scss";
+
+.home {
+  margin: $header_full_height auto 0;
+  width: 80vw;
+  padding-top: 10px;
+
+  .tag_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 0 0 10px;
+
+    .category_container{
+      $border: 10px solid $main_color;
+      border-left: $border;
+      border-bottom: $border;
+      padding: 10px;
+    }
+  }
+}

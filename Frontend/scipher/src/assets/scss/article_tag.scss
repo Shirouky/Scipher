@@ -1,0 +1,67 @@
+@import "_variables.scss";
+@import "_submenu.scss";
+
+.tags {
+  @include flex(flex-start);
+  width: 100%;
+
+  .tag {
+    @include flex(center);
+    color: black;
+    min-width: 50px;
+    height: 20px;
+    margin: 2px 4px 2px 0;
+    padding: 3px;
+    cursor: pointer;
+
+    .trash {
+      margin-left: 4px;
+    }
+  }
+
+  .fa {
+    margin: 0 8px 0 4px;
+  }
+
+  .input_container {
+    @include flex(space-between);
+    width: $input_width;
+    transition: 10s ease;
+
+    .input-search {
+      @include no_border;
+      border-radius: 10px;
+      font-size: 18px;
+      transition: $transition;
+      background-color: $light_grey;
+      width: calc(100% - 50px);
+      height: 30px;
+      display: block;
+      padding: 0 10px;
+
+      &::placeholder {
+        color: $menu_black;
+        font-size: 18px;
+        font-weight: 100;
+      }
+
+      &:focus {
+        @include no_border;
+
+        +.submenu {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+
+    .submenu {
+      left: 47.5%;
+      width: 91%;
+      margin-top: 135px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

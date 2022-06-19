@@ -1,0 +1,62 @@
+@import "_variables.scss";
+@import "_submenu.scss";
+
+.head {
+  margin: $short_height auto $margin;
+}
+
+
+.home {
+  padding: $padding;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .save_buttons {
+    @include flex(space-around);
+
+    .read {
+      @include unselect;
+      border: $border;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .red_button {
+      background-color: $light_red;
+    }
+  }
+
+  .comments {
+    margin: 0 10vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .send_comment {
+    width: 100%;
+
+    textarea {
+      width: 90%;
+      border: $border;
+      outline: $border;
+    }
+
+    .icons {
+      @include flex(space-between);
+      width: 60px;
+      position: relative;
+      left: 83%;
+      top: -15px;
+
+      .fa-times,
+      .fa-arrow-right {
+        background-color: white;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,53 @@
+@import "_variables.scss";
+
+.home {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1vh 3vw;
+  margin-top: $header_full_height;
+
+  h3 {
+    text-align: left;
+  }
+
+  .tags {
+    @include flex(space-between);
+
+    .tag {
+      margin: 0 10px 10px 0;
+      width: 200px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .rating_container {
+    margin: 5vh 0;
+
+    ul {
+      @include reset-list;
+
+      span {
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+@include right_left;

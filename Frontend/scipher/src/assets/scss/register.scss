@@ -1,0 +1,74 @@
+@import "_variables.scss";
+
+$height: 30px;
+
+.big_head {
+    margin: $header_full_height auto $margin;
+}
+
+.home_ {
+    padding: $padding;
+
+    .next_button {
+        @include flex(space-between);
+        padding: 1%;
+        background-color: $green;
+        box-sizing: border-box;
+        width: 200px;
+        margin: 5% auto 0;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+
+        p {
+            margin: 1%;
+        }
+    }
+
+    .confirmation {
+        margin: auto;
+        width: 300px;
+
+        input {
+            width: 300px;
+            margin-bottom: 2%;
+        }
+
+        div {
+            @include flex(space-between);
+            cursor: pointer;
+        }
+    }
+
+    .avatar {
+        @include circle;
+    }
+
+    input {
+        height: $height;
+        margin: 1% auto;
+        display: block;
+    }
+
+    .code {
+        text-align: center;
+    }
+
+    .green {
+        color: $green;
+        border: 1px solid $green;
+
+        &:focus {
+            outline: 1px solid $green;
+        }
+    }
+
+    .red {
+        color: $red;
+        border: 1px solid $red;
+
+        &:focus {
+            outline: 1px solid $red;
+        }
+    }
+}

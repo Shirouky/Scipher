@@ -1,0 +1,126 @@
+@import "_variables.scss";
+@import "_submenu.scss";
+
+.avatar {
+  @include flex(space-around);
+  cursor: pointer;
+  height: $short_height;
+
+  p {
+    font-size: large;
+    margin-right: 5px;
+  }
+
+  img {
+    @include circle;
+    margin: 5px;
+  }
+}
+
+.login_container {
+  @include flex(space-between);
+  width: 140px;
+  height: $short_height;
+  font-size: $bigger_font_size;
+  cursor: pointer;
+
+  .login {
+    font-size: $big_font_size;
+
+    &:hover {
+      +.submenu {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  .submenu {
+    top: 20px;
+    margin-top: 28px;
+    width: 200px;
+
+    &:hover {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+.opened {
+  position: relative;
+  width: 50%;
+}
+
+.closed {
+  width: 0;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  background-color: $menu_black;
+  overflow: hidden;
+  transition: 0.5s;
+
+  .closeBtn {
+    @include closeBtn;
+  }
+
+  .overlay-content {
+    @include flex(flex-end);
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: right;
+    margin-top: 30px;
+
+    .wrapper {
+      padding: 5px;
+      border-bottom: 3px solid black;
+      width: 80%;
+    }
+
+    a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: #f1f1f1;
+      }
+    }
+  }
+}
+
+.profile_content {
+  @include flex(flex-end);
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: right;
+  margin-top: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {
+    a {
+      font-size: 20px;
+    }
+
+    .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+}

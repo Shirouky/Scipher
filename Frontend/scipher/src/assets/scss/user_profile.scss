@@ -1,0 +1,202 @@
+@import "_variables.scss";
+
+@include right_left;
+
+.input {
+  display: none;
+}
+
+.buttons {
+  @include flex(space-around);
+  padding-top: 10px;
+}
+
+.create {
+  @include flex(space-between);
+  margin-top: 20px;
+  width: 100%;
+}
+
+.label {
+  border: $border;
+  background-color: transparent;
+  font-size: $big_font_size;
+  padding: 0;
+
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
+
+.inputs {
+  border: $border;
+}
+
+.head {
+  margin: $short_height auto $margin;
+}
+
+.home {
+  padding: $padding;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .settings {
+    width: 100%;
+
+    .input_change {
+      border: $light_grey;
+      outline: $light_green;
+      height: 20px;
+      width: 200px;
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+  .right {
+    .info {
+      ul {
+        @include reset-list;
+
+        li {
+          @include flex(space-between);
+
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.select {
+  position: relative;
+
+  select {
+    @include no-border;
+    padding: 7px 40px 7px 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 150ms ease;
+
+    &:required:invalid {
+      color: #5a667f;
+    }
+
+    &:focus {
+      @include no-border;
+    }
+
+    option {
+      border: none;
+      white-space: nowrap;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    option[value=""][disabled] {
+      display: none;
+    }
+  }
+}
+
+$primary: black;
+$primary-faint: mix(black, white, 60%);
+
+.tabBlock {
+  margin: 0;
+
+  &-tabs {
+    @include reset-list;
+
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+
+  &-tab {
+    height: 40px;
+    text-overflow: ellipsis;
+    width: 25%;
+    // border: $border;
+    color: $primary-faint;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    float: left;
+    padding: 8px 10px;
+    transition: 0.1s ease-in-out;
+    text-decoration: none;
+
+    strong {
+      white-space: nowrap;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:last-of-type {
+      border-right: $border;
+      border-left: $border;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      transition: 0.1s ease-in-out;
+    }
+
+    &::before {
+      background-color: transparent;
+      left: 0;
+      right: 0;
+      top: -2px;
+    }
+
+    &::after {
+      left: 20px;
+      right: 20px;
+      bottom: -2px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $primary;
+
+      &::before {
+        background-color: white;
+      }
+
+      &::after {
+        background-color: $blue;
+      }
+    }
+
+    fa {
+      margin-right: 10px;
+    }
+  }
+
+  .tabBlock-tabs {
+    padding: $padding;
+  }
+}

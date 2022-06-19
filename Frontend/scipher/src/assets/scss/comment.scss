@@ -1,0 +1,62 @@
+@import "_variables.scss";
+.comment_container {
+  padding: 10px 0;
+  $width: 20px;
+  display: flex;
+  border: $border;
+  width: 100%;
+  margin: 10px 0;
+
+  .left {
+    @include flex(center);
+    margin-left: $little_margin;
+    width: $width;
+    height: 100px;
+
+    p {
+      margin: 0;
+    }
+    .green {
+      color: $green;
+    }
+
+    .red {
+      color: $red;
+    }
+  }
+  .right {
+    margin-left: $margin;
+    width: calc(100% - $width);
+
+    .flex {
+      @include flex(space-between);
+      padding-right: 10%;
+
+      .header {
+        @include header;
+      }
+
+      .article {
+        @include flex(space-between);
+        cursor: pointer;
+
+        i {
+          margin-left: $little_margin;
+        }
+      }
+    }
+
+    .hidden {
+      color: $red;
+      cursor: pointer;
+    }
+
+    .share {
+      position: relative;
+      left: 80%;
+      top: 30px;
+      background-color: white;
+      border-radius: 100%;
+}
+}
+}

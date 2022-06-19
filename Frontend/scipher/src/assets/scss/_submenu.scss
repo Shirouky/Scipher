@@ -1,0 +1,42 @@
+@import "_variables.scss";
+
+.submenu {
+    @include reset_list;
+    position: absolute;
+    margin: 16px 10px 10px 10px;
+    background-color: $main_color;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    transition: 0.3s;
+    z-index: 5;
+    cursor: pointer;
+
+    li {
+        box-sizing: border-box;
+        padding: 0 10px;
+
+        p,
+        button,
+        input {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            padding: 10px 5px;
+            color: black;
+            margin: 5px 0;
+            transition: 0.3s linear;
+        }
+
+        p:hover {
+            background-color: $menu_grey;
+        }
+    }
+}
+
+i:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}

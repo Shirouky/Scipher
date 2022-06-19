@@ -1,0 +1,12 @@
+@import "_variables.scss";
+
+footer {
+
+    bottom: 0;
+    width: 100%;
+    padding: $short_height/2 0;
+    background-color: $light_grey;
+    box-sizing: content-box;
+
+    p {}
+}

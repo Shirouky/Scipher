@@ -1,0 +1,71 @@
+@import "_variables";
+@import "_submenu.scss";
+
+.input {
+  display: none;
+}
+
+.label {
+  @include no-border;
+  background-color: transparent;
+  font-size: $big_font_size;
+  padding: 0;
+  width: 100%;
+
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
+
+.home {
+  padding: $padding;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header {
+  .input_container {
+    @include flex(space-between);
+    width: $input_width;
+    transition: 10s ease;
+
+    .input-search {
+      @include no_border;
+      border-radius: 10px;
+      font-size: 18px;
+      transition: $transition;
+      background-color: $light_grey;
+      width: calc(100% - 50px);
+      height: 30px;
+      display: block;
+      padding: 0 10px;
+
+      &::placeholder {
+        color: $menu_black;
+        font-size: 18px;
+        font-weight: 100;
+      }
+
+      &:focus {
+        @include no_border;
+
+        +.submenu {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+
+    .submenu {
+      left: 47.5%;
+      width: 91%;
+      margin-top: 135px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
